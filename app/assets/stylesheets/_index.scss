@@ -1,0 +1,35 @@
+.wrapper{
+  height: 100%;
+  width: 100%;
+  .navber{
+    height: 100%;
+    width: 300px;
+    background-color: #2f3e51;
+    float: left;
+    &__private{
+      height: 100px;
+      background-color: #253241;
+    }
+    &__groups{
+      height: calc(100vh - 100px);
+      background-color: #2f3e51;
+    }
+  }
+  .contents {
+    height: 100%;
+    width: calc(100vw - 300px);
+    float: right;
+    &__group{
+      height: 100px;
+      border-bottom: thin solid #eeeeee;
+    }
+    &__messeages{
+      height: calc(100vh - 190px);
+      background-color: #F5F5F5;
+    }
+    &__form{
+      height: 90px;
+      background-color: #DCDCDC;
+    }
+  }
+}
