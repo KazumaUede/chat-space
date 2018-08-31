@@ -1,35 +1,142 @@
+$navber_padding: 0 20px;
+$contents_padding: 0 40px;
+$textarea_width: calc(100vw - 300px - 210px  );
+
 .wrapper{
-  height: 100%;
+  height: 100vh;
   width: 100%;
+  .messeageber{
+    height: 30px;
+    color: #FFFFFF;
+    background-color: #38Aef0;
+    @include center();
+  }
   .navber{
-    height: 100%;
+    height: 100vh;
     width: 300px;
+    color: #FFFFFF;
     background-color: #2f3e51;
     float: left;
     &__private{
       height: 100px;
+      width: 300px;
+      padding: 0 20px;
       background-color: #253241;
+      display: table-cell;
+      vertical-align: middle;
+      &__name{
+        font-size: 16px;
+        font-weight: bold;
+        float:left;
+      }
+      &__icon{
+        float:right;
+        .i{
+          color: #FFFFFF;
+          font-size: 18px;
+        }
+      }
     }
     &__groups{
-      height: calc(100vh - 100px);
+      height: calc(100vh - 100px - 20px);
+      padding: 20px 20px 0;
       background-color: #2f3e51;
+      &__name{
+        font-size: 15px;
+      }
+      &__messeage{
+        font-size: 11px;
+        padding: 5px 0 40px;
+      }
     }
   }
   .contents {
-    height: 100%;
+    height: 100vh;
     width: calc(100vw - 300px);
     float: right;
     &__group{
       height: 100px;
-      border-bottom: thin solid #eeeeee;
+      padding: 0 40px;
+      border-bottom: 1px solid #eeeeee;
+      position: relative;
+      &__name{
+        font-size: 20px;
+        color: #333333;
+        padding-top: 30px;
+        float: left;
+      }
+      &__members{
+        clear: both;
+        font-size: 12px;
+        color: #999999;
+        padding-top: 15px;
+      }
+      &__edit{
+        height: 40px;
+        font-size: 14px;
+        color: #38AEF0;
+        border: 2px solid #38AEF0;
+        margin-top: 28px;
+        padding: 0 20px;
+        @include center();
+        position: absolute;
+        top: 0; right: 40px;
+      }
     }
     &__messeages{
-      height: calc(100vh - 190px);
+      height: calc(100vh - 100px - 90px - 46px - 1px );
+      color: #434A54;
+      padding: 46px 40px 0;
       background-color: #F5F5F5;
+      &__user{
+        padding-bottom: 10px;
+        &__name{
+          font-size: 16px;
+          font-weight: bold;
+          float: left;
+          margin-right: 10px;
+
+        }
+        &__createdat{
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      &__messeage{
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
     }
     &__form{
-      height: 90px;
+      height: 50px;
+      padding: 20px 40px 20px;
       background-color: #DCDCDC;
+      &__textarea{
+        width:$textarea_width;
+        float: left;
+        position: relative;
+        input[type="textarea"] {
+                height: 50px;
+                width: $textarea_width;
+                outline: 0;
+                border: 0;
+                padding-left: 15px;
+        }
+        .i{
+          color: #2f3e51;
+          font-size: 18px;
+          position: absolute;
+          top: 15px; right: 0px;
+        }
+      }
+      &__send{
+        height: 50px;
+        width: 100px;
+        color: #FFFFFF;
+        background-color: #38Aef0;
+        float: right;
+        @include center();
+      }
     }
   }
 }
