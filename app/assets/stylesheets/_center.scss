@@ -1,0 +1,7 @@
+// フォント上下左右中央揃え
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

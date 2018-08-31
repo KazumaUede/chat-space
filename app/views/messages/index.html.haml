@@ -1,0 +1,35 @@
+!!!
+.html{lang: "ja"}
+  .head
+    .meta{charset: "utf-8"}
+  .body
+    .wrapper
+      .messeageber
+        メッセージバー
+      .navber
+        .navber__private
+          .navber__private__name
+            個人情報
+          .navber__private__icon
+            = link_to '/messages' do
+              .i.fas.fa-edit.fa-lg
+            = link_to '/messages' do
+              .i.fas.fa-cog.fa-lg
+        = render "group"
+      .contents
+        .contents__group
+          .contents__group__name
+            グループ名
+          .contents__group__members
+            メンバー
+          .contents__group__edit
+            Edit
+        = render "messeage"
+        .contents__form
+          .contents__form__textarea
+            %input{:placeholder => "type a messeage", :type => "textarea"}/
+            = link_to '/messages' do
+              .i.far.fa-image
+          .contents__form__send
+            Send
+
