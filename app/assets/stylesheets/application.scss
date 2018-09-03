@@ -4,6 +4,7 @@
 //----------------------------------初期設定
 @import "config/colors";
 @import "modules/flash";
-@import "./center";
-@import "./index";
-@import "./user";
+@import "modules/center";
+@import "modules/index";
+@import "modules/user";
+@import "modules/group";
