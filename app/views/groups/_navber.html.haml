@@ -1,0 +1,10 @@
+.navber
+  .navber__private
+    .navber__private__name
+      = current_user.name
+    .navber__private__icon
+      = link_to new_group_path do
+        .i.fas.fa-edit.fa-lg
+      = link_to edit_user_path(current_user) do
+        .i.fas.fa-cog.fa-lg
+  = render "groups/group"
