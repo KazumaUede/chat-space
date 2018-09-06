@@ -43,9 +43,13 @@ $textarea_width: calc(100vw - 300px - 210px  );
       background-color: #2f3e51;
       &__name{
         font-size: 15px;
+        color: #FFFFFF;
+        text-decoration: none;
       }
       &__messeage{
         font-size: 11px;
+        color: #FFFFFF;
+        text-decoration: none;
         padding: 5px 0 40px;
       }
     }
