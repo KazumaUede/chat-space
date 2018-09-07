@@ -6,11 +6,12 @@
       メンバー
     .contents__group__edit
       Edit
-  = render "message"
-  .contents__form
-    .contents__form__textarea
-      %input{:placeholder => "type a messeage", :type => "textarea"}/
-      = link_to '/messages' do
-        .i.far.fa-image
-    .contents__form__send
-      Send
+  = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      .form__textarea
+        = f.text_field :content, class: 'form__textarea__message', placeholder: 'type a message'
+        = f.label :image do
+          = fa_icon "image", class: 'image'
+          = f.file_field :image, style: "display:none"
+      = f.submit 'Send', class: 'form__send'
