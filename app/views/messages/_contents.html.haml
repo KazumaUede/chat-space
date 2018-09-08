@@ -6,7 +6,8 @@
       メンバー
     .contents__group__edit
       Edit
-  = render @messages
+  .contents__messages
+    = render partial: 'message', collection: @messages
   .form
     = form_for [@group, @message] do |f|
       .form__textarea
