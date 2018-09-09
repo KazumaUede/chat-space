@@ -1,11 +1,13 @@
 .contents
   .contents__group
     .contents__group__name
-      グループ名
+      = @group.name
     .contents__group__members
-      メンバー
-    .contents__group__edit
-      Edit
+      - @group.users.each do |users|
+        = users.name
+    = link_to  edit_group_path(@group) do
+      .contents__group__edit
+        Edit
   .contents__messages
     = render partial: 'message', collection: @messages
   .form
