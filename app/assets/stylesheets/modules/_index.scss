@@ -31,7 +31,11 @@ $textarea_width: calc(100vw - 300px - 210px  );
       }
       &__icon{
         float:right;
-        .i{
+        .edit{
+          color: #FFFFFF;
+          font-size: 18px;
+        }
+        .cog{
           color: #FFFFFF;
           font-size: 18px;
         }
@@ -87,18 +91,20 @@ $textarea_width: calc(100vw - 300px - 210px  );
         top: 0; right: 40px;
       }
     }
-    &__messeages{
+    &__messages{
       height: calc(100vh - 100px - 90px - 46px - 1px );
       color: #434A54;
       padding: 46px 40px 0;
       background-color: #F5F5F5;
+      z-index: 1;
+      overflow: scroll;
       &__user{
         padding-bottom: 10px;
         &__name{
           font-size: 16px;
           font-weight: bold;
-          float: left;
           margin-right: 10px;
+          float: left;
 
         }
         &__createdat{
@@ -111,22 +117,23 @@ $textarea_width: calc(100vw - 300px - 210px  );
         margin-bottom: 40px;
       }
     }
-    &__form{
+    .form{
       height: 50px;
       padding: 20px 40px 20px;
       background-color: #DCDCDC;
+      z-index: 2;
       &__textarea{
         width:$textarea_width;
         float: left;
         position: relative;
-        input[type="textarea"] {
+        &__message {
                 height: 50px;
                 width: $textarea_width;
                 outline: 0;
                 border: 0;
                 padding-left: 15px;
         }
-        .i{
+        .image{
           color: #2f3e51;
           font-size: 18px;
           position: absolute;

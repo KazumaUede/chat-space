@@ -4,7 +4,7 @@
       = current_user.name
     .navber__private__icon
       = link_to new_group_path do
-        .i.fas.fa-edit.fa-lg
+        = fa_icon "edit", class: 'edit'
       = link_to edit_user_path(current_user) do
-        .i.fas.fa-cog.fa-lg
+        = fa_icon "cog", class: 'cog'
   = render "groups/group"

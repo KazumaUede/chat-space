@@ -1,16 +1,20 @@
 .contents
   .contents__group
     .contents__group__name
-      グループ名
+      = @group.name
     .contents__group__members
-      メンバー
-    .contents__group__edit
-      Edit
-  = render "messeage"
-  .contents__form
-    .contents__form__textarea
-      %input{:placeholder => "type a messeage", :type => "textarea"}/
-      = link_to '/messages' do
-        .i.far.fa-image
-    .contents__form__send
-      Send
+      - @group.users.each do |users|
+        = users.name
+    = link_to  edit_group_path(@group) do
+      .contents__group__edit
+        Edit
+  .contents__messages
+    = render partial: 'message', collection: @messages
+  .form
+    = form_for [@group, @message] do |f|
+      .form__textarea
+        = f.text_field :content, class: 'form__textarea__message', placeholder: 'type a message'
+        = f.label :image do
+          = fa_icon "image", class: 'image'
+          = f.file_field :image, style: "display:none"
+      = f.submit 'Send', class: 'form__send'
