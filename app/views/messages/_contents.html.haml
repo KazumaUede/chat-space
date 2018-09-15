@@ -13,7 +13,7 @@
   .form
     = form_for [@group, @message] do |f|
       .form__textarea
-        = f.text_field :content, class: 'form__textarea__message', placeholder: 'type a message'
+        = f.text_field :content, class: 'form__textarea__message', placeholder: 'type a message', id: "new_message"
         = f.label :image do
           = fa_icon "image", class: 'image'
           = f.file_field :image, style: "display:none"
