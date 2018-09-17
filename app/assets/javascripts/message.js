@@ -18,7 +18,6 @@ $(function(){
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-    console.log(formData);
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -29,7 +28,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      console.log(data);
       var html = buildHTML(data);
       $('.contents__messages').append(html);
       //送信データ初期化
@@ -37,6 +35,9 @@ $(function(){
       $('#message_image').val('');
       //メッセージの一番下にスクロールする
       $('.contents__messages').animate({scrollTop: $('.contents__messages')[0].scrollHeight}, 'fast');
+    })
+    .fail(function() {
+      alert('メッセージの送信が失敗しました。');
     });
     return false;
   });
