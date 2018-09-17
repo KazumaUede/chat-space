@@ -1,17 +1,15 @@
 $(function(){
-  //画像アップロードを判断する
-  function imageSrc(message){
-    return image_src = message.image? message.image : "";
-  }
 
   function buildHTML(message){
+    //画像アップロードを判断する
+    var image_src = message.image? message.image : "";
     var html = `<div class="contents__messages__user">
                   <div class="contents__messages__user__name">${message.user_name}</div>
                   <div class="contents__messages__user__createdat">${message.created_at}</div>
                 </div>
                 <div class="contents__messages__messeage">
                   <p class="lower-message__content">${message.content}</p>
-                  <image src= ${ imageSrc(message) }>
+                  <image src= ${ image_src }>
                 </div>`
     return html;
   }
