@@ -11,20 +11,20 @@ $(function () {
     search_list.append(html);
   }
 
-  function appendNoUser(user) {
+  function appendNoUser(message) {
     var html = `
                 <div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${user}</p>
+                  <p class="chat-group-user__name">${message}</p>
                 </div>
               `
     search_list.append(html);
   }
 
-  function appendAddUser(userid,username) {
+  function appendAddUser(userId,userName) {
     var html = `
                 <div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
-                  <input name='group[user_ids][]' type='hidden' value='${ userid }'>
-                  <p class='chat-group-user__name'>${ username }</p>
+                  <input name='group[user_ids][]' type='hidden' value='${ userId }'>
+                  <p class='chat-group-user__name'>${ userName }</p>
                   <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
                 </div>`
     member_list.append(html);
