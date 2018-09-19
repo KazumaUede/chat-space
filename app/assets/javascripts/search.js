@@ -43,8 +43,6 @@ $(function () {
         },
         dataType: 'json'
       }).done(function (users) {
-        // console.log("成功");
-        console.log(users);
         $("#user-search-result").empty();
         if (users.length !== 0) {
           users.forEach(function (user) {
@@ -59,14 +57,12 @@ $(function () {
     }
   });
   $(document).on('click','.chat-group-user__btn--add',function(){
-    console.log("成功");
     var userId = $(this).attr('data-user-id')
     var userName = $(this).attr('data-user-name')
     appendAddUser(userId, userName)
     $(this).parent().remove();
   });
   $(document).on('click','.chat-group-user__btn--remove',function(){
-    console.log("成功");
     $(this).parent().remove();
   });
 });
