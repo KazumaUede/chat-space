@@ -1,5 +1,9 @@
 $(function(){
 
+  function scroll(){
+    $('.contents__messages').animate({scrollTop: $('.contents__messages')[0].scrollHeight}, 'fast');
+  }
+
   function buildHTML(message){
     //画像アップロードを判断する
     var image_src = message.image? message.image : "";
@@ -32,7 +36,7 @@ $(function(){
       $('.form__textarea__message').val('');
       $('#message_image').val('');
       //メッセージの一番下にスクロールする
-      $('.contents__messages').animate({scrollTop: $('.contents__messages')[0].scrollHeight}, 'fast');
+      scroll();
     })
     .fail(function() {
       alert('メッセージの送信が失敗しました。');
