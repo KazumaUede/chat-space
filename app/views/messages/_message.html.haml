@@ -1,10 +1,11 @@
-.contents__messages__user
-  .contents__messages__user__name
-    = message.user.name
-  .contents__messages__user__createdat
-    = message.created_at
-.contents__messages__messeage
-  - if message.content.present?
-    %p.lower-message__content
-      = message.content
-  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+.contents__messages__top{ "data-message-id": "#{message.id}"}
+  .contents__messages__user
+    .contents__messages__user__name
+      = message.user.name
+    .contents__messages__user__createdat
+      = message.created_at.to_formatted_s(:datetime)
+  .contents__messages__messeage
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
