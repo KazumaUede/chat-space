@@ -4,6 +4,12 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    respond_to do |format|
+      format.html
+      # まだ画面上に更新されてないメッセージがあれば取得
+      # where句の?は隣のparams[:id]のこと。jsonから画面上のメッセージIdを取得して比較する。
+      format.json { @new_messages = @messages.where('id > ?', params[:id]) }
+    end
   end
 
   def create
@@ -14,7 +20,9 @@ class MessagesController < ApplicationController
         format.json
       end
     else
-      render :index
+      @messages = @group.messages.includes(:user)
+      flash.now[:alert] = "メッセージを入力してください"
+      respond_to :index
     end
   end
 
