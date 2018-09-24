@@ -9,7 +9,7 @@ $(function () {
   function buildHTML(message) {
     //画像アップロードを判断する
     var image_src = message.image ? message.image : "";
-    var html = "<div class="contents__messages__top" data-message-id="${message.id}">"
+    var html = "<div class="contents__messages-top" data-message-id="${message.id}">"
                   "<div class="contents__messages__user">"
                     "<div class="contents__messages__user__name">${message.user_name}</div>"
                     "<div class="contents__messages__user__createdat">${message.created_at}</div>"
