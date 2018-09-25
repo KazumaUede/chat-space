@@ -42,10 +42,7 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of cb86112... Add Capistrano
 end
 
 group :development do
