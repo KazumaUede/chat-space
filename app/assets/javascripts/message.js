@@ -9,16 +9,16 @@ $(function () {
   function buildHTML(message) {
     //画像アップロードを判断する
     var image_src = message.image ? message.image : "";
-    var html = "<div class="contents__messages__top" data-message-id="${message.id}">"
-                  "<div class="contents__messages__user">"
-                    "<div class="contents__messages__user__name">${message.user_name}</div>"
-                    "<div class="contents__messages__user__createdat">${message.created_at}</div>"
-                  "</div>"
-                  "<div class="contents__messages__messeage">"
-                    "<p class="lower-message__content">${message.content}</p>"
-                    "<image src= ${ image_src }>"
-                  "</div>"
-                "</div>"
+    var html = `<div class="contents__messages__top" data-message-id="${message.id}">
+                  <div class="contents__messages__user">
+                    <div class="contents__messages__user__name">${message.user_name}</div>
+                    <div class="contents__messages__user__createdat">${message.created_at}</div>
+                  </div>
+                  <div class="contents__messages__messeage">
+                    <p class="lower-message__content">${message.content}</p>
+                    <image src= ${ image_src }>
+                  </div>
+                </div>`
     return html;
   }
   $('#new_message').on('submit', function (e) {
