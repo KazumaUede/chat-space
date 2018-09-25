@@ -26,15 +26,6 @@ namespace :deploy do
   end
 end
 
-Rake::Task["deploy:symlink:release"].clear
-    namespace :symlink do
-      desc 'Symlink release to current'
-      task :release do
-        on release_roles :all do
-          execute :ln, '-s', release_path, current_path
-        end
-      end
-    end
 
 # config valid for current version and patch releases of Capistrano
 # lock "~> 3.11.0"
