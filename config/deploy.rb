@@ -2,7 +2,7 @@
 # lock '3.11.0'
 
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock "3.11.0"
 
 set :application, 'chat-space'
 set :repo_url,  'git@github.com:KazumaUede/chat-space.git'
@@ -16,7 +16,7 @@ set :ssh_options, auth_methods: ['publickey'],
                   keys: ['Users/kamidekazuma/.ssh/key_pair.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
-set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
+set :unicorn_config_path, -> { "#{current_path}/chat-space/config/unicorn.rb" }
 set :keep_releases, 5
 
 after 'deploy:publishing', 'deploy:restart'
@@ -26,6 +26,15 @@ namespace :deploy do
   end
 end
 
+Rake::Task["deploy:symlink:release"].clear
+    namespace :symlink do
+      desc 'Symlink release to current'
+      task :release do
+        on release_roles :all do
+          execute :ln, '-s', release_path, current_path
+        end
+      end
+    end
 
 # config valid for current version and patch releases of Capistrano
 # lock "~> 3.11.0"
